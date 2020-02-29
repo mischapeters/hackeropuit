@@ -11,14 +11,14 @@ div.cell {
 
 /* [HEADER] */
 div.head {
-  background: #f00;
+  background: #005;
   color: #fff;
   font-weight: bold;
 }
 
 /* [ALTERNATE ROWS] */
 div.alt {
-  background: #f33;
+  background: #004;
 }
 
 /* [RESPONSIVE TRANSFORM] */
