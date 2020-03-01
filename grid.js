@@ -44,9 +44,6 @@ for (let key in parsed) {
       if (theEvent[i] != null) {
         theCell.innerHTML = "<A HREF='" + theEvent[i] + "'>" + theEvent[i] + "</A>";
       }
-    } else if ( i == "StartDate" || i == "EndDate") {
-      let d = theEvent[i].toString();
-      theCell.innerHTML = d.substring(0,4) + "-" + d.substring(4,6) + "-" + d.substring(6,8);
     } else {
       theCell.innerHTML = theEvent[i];
     }
