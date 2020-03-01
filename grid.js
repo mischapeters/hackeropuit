@@ -1,21 +1,21 @@
 function getJSON(url) {
-        var resp ;
-        var xmlHttp ;
+  var resp;
+  var xmlHttp;
 
-        resp  = '' ;
-        xmlHttp = new XMLHttpRequest();
+  resp = '';
+  xmlHttp = new XMLHttpRequest();
 
-        if(xmlHttp != null)
-        {
-            xmlHttp.open( "GET", url, false );
-            xmlHttp.send( null );
-            resp = xmlHttp.responseText;
-        }
+  if (xmlHttp != null) {
+    xmlHttp.open("GET", url, false);
+    xmlHttp.send(null);
+    resp = xmlHttp.responseText;
+  }
 
-        return resp ;
+  return resp;
 }
 
-var jsondata = getJSON('https://hackeropuit.nl/events.json');
+//var jsondata = getJSON('https://hackeropuit.nl/events.json');
+var jsondata = getJSON('events.json');
 var columns = ["Name", "Location", "StartDate", "EndDate", "Comment", "URL"]
 
 // (B) PARSE JSON INTO OBJECT
@@ -25,7 +25,7 @@ console.table(parsed);
 // (C) TABLE HEADER
 var theWrap = document.getElementById("tableWrap");
 var theCell = null;
-for (let key in columns ) {
+for (let key in columns) {
   theCell = document.createElement("div");
   theCell.innerHTML = columns[key];
   theCell.classList.add("cell");
@@ -40,16 +40,19 @@ for (let key in parsed) {
   theEvent = parsed[key];
   for (let i in theEvent) {
     theCell = document.createElement("div");
-    if ( i == "URL" ) {
-	if ( theEvent[i] != null ) {
-    theCell.innerHTML = "<A HREF='" + theEvent[i] + "'>" + theEvent[i] + "</A>";
-	}
+    if (i == "URL") {
+      if (theEvent[i] != null) {
+        theCell.innerHTML = "<A HREF='" + theEvent[i] + "'>" + theEvent[i] + "</A>";
+      }
+    } else if ( i == "StartDate" || i == "EndDate") {
+      let d = theEvent[i].toString();
+      theCell.innerHTML = d.substring(0,4) + "-" + d.substring(4,6) + "-" + d.substring(6,8);
     } else {
-    theCell.innerHTML = theEvent[i];
+      theCell.innerHTML = theEvent[i];
     }
     theCell.classList.add("cell");
-    if (altRow) { 
-      theCell.classList.add("alt"); 
+    if (altRow) {
+      theCell.classList.add("alt");
     }
     theWrap.appendChild(theCell);
   }
