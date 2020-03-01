@@ -1,0 +1,16 @@
+# Add your events to your own file, you can use multiple events in a single file
+# Just name it after your organization / group, then create a block per event
+# dates in YYYY-MM-DD, fields are case-sensitive
+
+- Name: Demo Event 1
+  Location: Somewhere
+  StartDate: 1995-01-18
+  EndDate: 1995-01-20
+  Comment: Some Multi-Day Event
+  URL: https://github.com/revspace/hackeropuit
+- Name: Other Demo Event
+  Location: Virtual
+  StartDate: 1996-11-02
+  EndDate: 1996-11-02
+  Comment: Another Event
+  URL:
