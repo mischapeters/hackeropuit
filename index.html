@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">  
-<script defer src="grid.js"></script>
-<link rel="stylesheet" type="text/css" href="grid.css">
-<style>
-body {
-  background-color: black;
-  font-family: 'Open Sans', Sans-Serif;
-  color: white;
-}
-a {
-  color: #9DF;
-}
-a:visited {
-  color: #9DB;
-}
-a:hover {
-  color: #AFA;
-}
-body {
-  background-color: black;
-  color: white;
-}
-.animatedBox {
-  width: 100%;
-  height: 243px;
-  text-align: center;
-  font: 24px sans-serif;
-  color: white;
-  text-shadow: 0px 0px 12px black;
-  background-image: url('/hackeropuit-header.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 0%;
-  animation: myAnimation 2s ease 1s 1 forwards;
-}
-@keyframes myAnimation {
-	100% {
-	  background-size: 100%;
-	}
-}
-</style>
-<title>HackErOpUit</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">  
+  <script defer src="grid.js"></script>
+  <link rel="stylesheet" type="text/css" href="grid.css">
+  <style>
+    @font-face {
+      font-family: 'OCR A Std';
+      font-style: normal;
+      font-weight: normal;
+      src: local('OCR A Std'), url('OCRAStd.woff') format('woff');
+    }
+    body {
+      background-color: black;
+      font-family: 'Open Sans', Sans-Serif;
+      color: white;
+    }
+    a {
+      color: #8CF;
+    }
+    a:visited {
+      color: #8D5;
+    }
+    a:hover {
+      color: #8D5;
+    }
+    #wrapper {
+      margin: auto;
+      min-width: 1000px;
+      max-width: 1600px;
+    }
+    #header {
+      width: 100%;
+      min-width: 1000px;
+      padding: 25px 0px 20px 0px;
+      text-align: center;
+      font: 128px 'OCR A Std';
+      text-shadow: 5px  5px 10px #000, -5px  5px 10px #000, 5px -5px 10px #000, -5px -5px 10px #000;
+      background-image: url('computer-2930704_1280_half.jpg');
+      background-position: bottom;
+      background-size: cover;
+    }
+  </style>
+  <title>HackErOpUit</title>
 </head>
 <body>
-<div class="animatedBox"></div>
-
-Een evenement of uitje toevoegen ? Maak een pull-request via <A HREF="https://github.com/revspace/hackeropuit">github/revspace/hackeropuit</A>
-	
+  <div id="wrapper">
+    <div id="header">HackErOpUit</div>
+    <p>Een evenement of uitje toevoegen ? Maak een pull-request via <A HREF="https://github.com/revspace/hackeropuit">github/revspace/hackeropuit</A></p>
     <div id="tableWrap"></div>
+  </div>
 </body>
 </html>

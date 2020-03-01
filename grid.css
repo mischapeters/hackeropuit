@@ -7,18 +7,19 @@
 /* [CELLS] */
 div.cell {
   padding: 10px;
+  background: #111;
 }
 
 /* [HEADER] */
 div.head {
-  background: #005;
-  color: #fff;
+  background: #8CF;
+  color: #000;
   font-weight: bold;
 }
 
 /* [ALTERNATE ROWS] */
 div.alt {
-  background: #004;
+  background: #222;
 }
 
 /* [RESPONSIVE TRANSFORM] */
