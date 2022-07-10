@@ -4,12 +4,14 @@ import sys
 import yaml
 import glob
 import simplejson as json
-from yamlreader import yaml_load
+import yaml
 from datetime import datetime, date
 
 today=date.today()
 
-events = yaml_load("events/*.yaml" )
+with open(r'/dev/stdin') as infile:
+    events = yaml.load( infile, Loader=yaml.BaseLoader )
+
 output = open("events.json", "w", encoding='utf8' )
 
 okevents = {}
@@ -21,12 +23,15 @@ def eventdate(elem):
 # but I couldn't get it working in 1 pass...
 
 for event in events:
-  if event['EndDate'] < event['StartDate']:
+  sdate = datetime.strptime( event['StartDate'], "%Y-%m-%d" ).date()
+  edate = datetime.strptime( event['EndDate'], "%Y-%m-%d" ).date()
+  if edate < sdate:
     print( "Event ends before it starts\n" )
     events.remove(event)
 
 for event in events:
-  if today > event['EndDate']:
+  edate = datetime.strptime( event['EndDate'], "%Y-%m-%d" ).date()
+  if today > edate:
     print( "Skipping event, already passed\n" )
     events.remove(event)
 
