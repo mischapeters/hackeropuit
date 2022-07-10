@@ -3,14 +3,14 @@
 import sys
 import yaml
 import glob
-import json
+import simplejson as json
 from yamlreader import yaml_load
 from datetime import datetime, date
 
 today=date.today()
 
-events = yaml_load("events/*.yaml")
-output = open("events.json", "w" )
+events = yaml_load("events/*.yaml" )
+output = open("events.json", "w", encoding='utf8' )
 
 okevents = {}
 
@@ -31,4 +31,6 @@ for event in events:
     events.remove(event)
 
 events.sort(key=eventdate);
-json.dump( events, output, indent=4, default=str )
+#json.dump( events, output, indent=4, default=str, ensure_ascii=False )
+json.dump( events, output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
+
