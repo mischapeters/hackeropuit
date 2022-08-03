@@ -27,15 +27,14 @@ for event in events:
   edate = datetime.strptime( event['EndDate'], "%Y-%m-%d" ).date()
 
   if edate < sdate:
-    print(f"Event {event['Name']}, end time before start time\n" )
+    print(f"Event: {event['Name']}, end time before start time" )
     events.remove(event)
   elif today > edate:
-    print(f"Skipping event {event['Name']}, already passed\n" )
+    print(f"Event: {event['Name']}, already passed" )
     events.remove(event)
   else:
-    print(f"Event {event['Name']}, looks ok.\n" )
     okevents.append(event)
+#    print(f"Event: {event['Name']}, looks ok." )
 
-okevents.sort(key=eventdate);
-json.dump( okevents, output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
+json.dump( okevents.sort(key=eventdate), output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
 
