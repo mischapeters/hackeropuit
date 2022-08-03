@@ -14,7 +14,7 @@ with open(r'/dev/stdin') as infile:
 
 output = open("events.json", "w", encoding='utf8' )
 
-okevents = {}
+okevents = []
 
 def eventdate(elem):
   return elem['StartDate']
@@ -34,7 +34,8 @@ for event in events:
     events.remove(event)
   else:
     print(f"Event {event['Name']}, looks ok.\n" )
+    okevents.append(event)
 
-events.sort(key=eventdate);
-json.dump( events, output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
+okevents.sort(key=eventdate);
+json.dump( okevents, output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
 
