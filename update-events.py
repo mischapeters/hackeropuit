@@ -36,5 +36,6 @@ for event in events:
     okevents.append(event)
 #    print(f"Event: {event['Name']}, looks ok." )
 
-json.dump( okevents.sort(key=eventdate), output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
+okevents.sort(key=eventdate)
+json.dump( okevents, output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
 
