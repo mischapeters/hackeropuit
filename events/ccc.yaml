@@ -6,8 +6,29 @@
   URL: https://events.ccc.de/tag/37c3/
 
 - Name: CCC Camp 2023
-  Location:
+  Location: Mildenberg, DE
   StartDate: 2023-08-15
   EndDate: 2023-08-18
   Comment:
   URL: https://events.ccc.de/camp/2023/wiki/Main_Page
+
+- Name: Easterhegg 2023
+  Location: Hamburg, DE
+  StartDate: 2023-04-07
+  EndDate: 2023-04-10
+  Comment:
+  URL: https://eh20.easterhegg.eu/
+
+- Name: Graz Linuxtage 2023
+  Location: Graz, DE
+  StartDate: 2023-04-14
+  EndDate: 2023-04-15
+  Comment:
+  URL: http://linuxtage.at/
+
+- Name: GPN 2023
+  Location: Karlsruhe, DE
+  StartDate: 2023-06-08
+  EndDate: 2023-06-11
+  Comment:
+  URL: https://gulas.ch/
