@@ -4,7 +4,6 @@ import sys
 import glob
 import ruamel.yaml as yaml
 import simplejson as json
-import yaml
 from datetime import datetime, date
 
 def eventdate(elem):
@@ -23,15 +22,9 @@ with open("/dev/stdin") as stream:
 
 for event in events:
   # print(f"Parsing event: {event['Name']}" )
-  if event['EndDate'] < event['StartDate']:
-    print(f"Disabled Event: {event['Name']}, end time before start time" )
-    # events.remove(event)
-  elif today > event['EndDate']:
-    print(f"Passed Event: {event['Name']}, already passed" )
-    # events.remove(event)
-  else:
-    print(f"Future Event: {event['Name']}, added to list" )
+  if ( event['EndDate'] >= event['StartDate'] and today <= event['EndDate'] ):
     okevents.append(event)
+    #print(f"Future Event: {event['Name']}, added to list" )
 
 okevents.sort(key=eventdate)
 output = open("events.json", "w", encoding='utf8' )
