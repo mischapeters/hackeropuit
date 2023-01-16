@@ -10,7 +10,7 @@ from datetime import datetime, date
 today=date.today()
 
 with open(r'/dev/stdin') as infile:
-    events = yaml.load( infile, Loader=yaml.BaseLoader )
+    events = yaml.load( infile, Loader=yaml.SafeLoader )
 
 okevents = []
 
@@ -21,14 +21,12 @@ def eventdate(elem):
 # but I couldn't get it working in 1 pass...
 
 for event in events:
-#  print(f"Parsing event: {event['Name']}" )
-  sdate = datetime.strptime( event['StartDate'], "%Y-%m-%d" ).date()
-  edate = datetime.strptime( event['EndDate'], "%Y-%m-%d" ).date()
+  print(f"Parsing event: {event['Name']}" )
 
-  if edate < sdate:
+  if event['EndDate'] < event['StartDate']:
     print(f"Disabled Event: {event['Name']}, end time before start time" )
     events.remove(event)
-  elif today > edate:
+  elif today > event['EndDate']:
     print(f"Passed Event: {event['Name']}, already passed" )
     events.remove(event)
   else:
