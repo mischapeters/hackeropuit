@@ -12,8 +12,6 @@ today=date.today()
 with open(r'/dev/stdin') as infile:
     events = yaml.load( infile, Loader=yaml.BaseLoader )
 
-output = open("events.json", "w", encoding='utf8' )
-
 okevents = []
 
 def eventdate(elem):
@@ -23,19 +21,21 @@ def eventdate(elem):
 # but I couldn't get it working in 1 pass...
 
 for event in events:
+#  print(f"Parsing event: {event['Name']}" )
   sdate = datetime.strptime( event['StartDate'], "%Y-%m-%d" ).date()
   edate = datetime.strptime( event['EndDate'], "%Y-%m-%d" ).date()
 
   if edate < sdate:
-    print(f"Event: {event['Name']}, end time before start time" )
+    print(f"Disabled Event: {event['Name']}, end time before start time" )
     events.remove(event)
   elif today > edate:
-    print(f"Event: {event['Name']}, already passed" )
+    print(f"Passed Event: {event['Name']}, already passed" )
     events.remove(event)
   else:
+    print(f"Future Event: {event['Name']}, added to list" )
     okevents.append(event)
-#    print(f"Event: {event['Name']}, looks ok." )
 
 okevents.sort(key=eventdate)
+output = open("events.json", "w", encoding='utf8' )
 json.dump( okevents, output, indent=4, default=str, ensure_ascii=False, encoding="utf-8")
 
