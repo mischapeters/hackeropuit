@@ -1,10 +1,6 @@
-# Add your events to your own file, you can use multiple events in a single file
-# Just name it after your organization / group, then create a block per event
-# dates in YYYY-MM-DD, fields are case-sensitive
-
 - Name: Outline 2023
   Location: Ommen, NL
   StartDate: 2023-05-18
   EndDate: 2023-05-21
-  Comment:
+  Comment: DemoParty
   URL: https://outlinedemoparty.nl/

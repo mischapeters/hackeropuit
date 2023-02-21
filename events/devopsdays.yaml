@@ -1,25 +1,24 @@
-
 - Name: DevOpsDays Berlin
   Location: Berlin, DE
   StartDate: 2022-09-21
   EndDate: 2022-09-22
-  Comment:
+  Comment: DevOpsConf
   URL: https://devopsdays.org/events/2022-berlin
 - Name: DevOpsDays Portugal
   Location: Porto, PT
   StartDate: 2022-09-26
   EndDate: 2022-09-27
-  Comment:
+  Comment: DevOpsConf
   URL: https://devopsdays.org/events/2022-portugal
 - Name: DevOpsDays London
   Location: London, UK
   StartDate: 2022-09-29
   EndDate: 2022-09-30
-  Comment:
+  Comment: DevOpsConf
   URL: https://devopsdays.org/events/2022-london
 - Name: DevOpsDays Eindhoven
   Location: Eindhoven, NL
   StartDate: 2022-10-20
   EndDate: 2022-10-21
-  Comment:
+  Comment: DevOpsConf
   URL: https://devopsdays.org/events/2022-eindhoven
